@@ -27,6 +27,9 @@
     height 5vw;
     object-fit:contain;
 }
+.card-title{
+    margin: 2em;
+}
 .twitter{
  
 }
@@ -35,4 +38,24 @@
 }
 .instagram{
     
+}
+.red{
+    color: red;
+}
+.navbar{ background:#234b8c;}
+.nav-link , .navbar-brand{ color: #f4f4f4; cursor: pointer;}
+.nav-link{
+    height: 5em;
+    object-fit: cover;
+}
+.nav-link:hover{ background: #f4f4f4; color: #234b8c; }
+.navbar-collapse{ justify-content: flex-end;}
+.navbar-toggler{  background:#fff !important;}
+.container{
+    margin-top: 10em;
+}
+.filtertitle{
+    color: #f4f4f4;
+    width: em;
+    font-size: 3em;
 }
