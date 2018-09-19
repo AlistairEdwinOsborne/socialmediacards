@@ -1,29 +1,26 @@
-$.getJSON('http://private-cc77e-aff.apiary-mock.com/posts', function (data) {
-    var jsonObject = data;
-    var postObj = [];
-
-    for (var key in jsonObject.items) {
-        var myobj = jsonObject.items[key];
-        postObj.push(myobj);
-    }
-
-    for (var i = 1; i < postObj.length; i++) {
-        if (postObj[i].service_name == "Manual") {
-            manualCard(postObj[i]);
-        } else if (postObj[i].service_name == "Twitter") {
-            twitterCard(postObj[i]);
-        } else if (postObj[i].service_name == "Instagram") {
-            instagramCard(postObj[i]);
+const url = 'http://private-cc77e-aff.apiary-mock.com/posts';
+fetch(url).then(response => {
+    return response.json();
+}).then(function (data) {
+    let posts = data.items;
+    for (key in posts) {
+        if (posts[key].service_name == "Manual") {
+            manualCard(posts[key]);
+        } else if (posts[key].service_name == "Twitter") {
+            twitterCard(posts[key]);
+        } else if (posts[key].service_name == "Instagram") {
+            instagramCard(posts[key]);
         }
     }
-    $('.card-text').html(function (_, html) {
+   $('.card-text').html(function (_, html) {
         return html.replace(/(\#\w+)/g, '<span class="red">$1</span>');
     });
     $('.card-text').html(function (_, html) {
         return html.replace(/(\@\w+)/g, '<span class="red">$1</span>');
     });
-});
+}).catch(err => {
 
+});
 
 $(document).ready(function () {});
 
@@ -76,38 +73,38 @@ var instagramCard = function (Object) {
     });
 }
 
-$('.manualtoggle').click(function(){
+$('.manualtoggle').click(function () {
     var clicks = $(this).data('clicks');
-    if (clicks){
+    if (clicks) {
         $('.manualtoggle').css("background", "#234b8c");
-        $('.manual').fadeIn(); 
-    } else{
+        $('.manual').fadeIn();
+    } else {
         $('.manualtoggle').css("background", "#f4f4f4");
-        $('.manual').fadeOut(); 
+        $('.manual').fadeOut();
     }
-        $(this).data("clicks", !clicks);
+    $(this).data("clicks", !clicks);
 });
 
-$('.instagramtoggle').click(function(){
+$('.instagramtoggle').click(function () {
     var clicks = $(this).data('clicks');
-    if (clicks){
+    if (clicks) {
         $('.instagramtoggle').css("background", "#234b8c");
-        $('.instagram').fadeIn(); 
-    } else{
+        $('.instagram').fadeIn();
+    } else {
         $('.instagramtoggle').css("background", "#f4f4f4");
-        $('.instagram').fadeOut(); 
+        $('.instagram').fadeOut();
     }
-        $(this).data("clicks", !clicks);
+    $(this).data("clicks", !clicks);
 });
 
-$('.twittertoggle').click(function(){
+$('.twittertoggle').click(function () {
     var clicks = $(this).data('clicks');
-    if (clicks){
+    if (clicks) {
         $('.twittertoggle').css("background", "#234b8c");
-        $('.twitter').fadeIn(); 
-    } else{
+        $('.twitter').fadeIn();
+    } else {
         $('.twittertoggle').css("background", "#f4f4f4");
-        $('.twitter').fadeOut(); 
+        $('.twitter').fadeOut();
     }
-        $(this).data("clicks", !clicks);
+    $(this).data("clicks", !clicks);
 });
