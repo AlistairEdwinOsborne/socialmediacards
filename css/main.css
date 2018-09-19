@@ -1,0 +1,29 @@
+/*header style*/
+.header{
+    background-image: url('../images/headerback.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.overlay{
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0);
+}
+/*card style*/
+.card-block {
+    margin: 2em;
+}
+.card-img-top{
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.rounded-circle{
+    width: 50%;
+    height 5vw;
+    object-fit:contain;
+}
