@@ -9,15 +9,11 @@
     
 <div class="container">
     <div class="row" id="contentPanel">
-        <div class="col-lg-4 col-md-16 col-sm-6 col-xs-6 align-items-stretch mt-4">
-            
-        <div class="card card-outline-info" id="'+Object.item_id+'Panel"><div class="card-block"><img class="card-image-top" src="images/ali.jpg" alt="Card image cap"><div class="card-title">@'+Object.item_data.user.username+'</div><div class="card-body"><p class="card-text">'+Object.item_data.tweet+'</p></div><div class="card-body"></div></div></div>
-        
-        
-        
-        </div></div>
+    <div class="col-lg-4 col-md-16 col-sm-6 col-xs-6 align-items-stretch mt-4 manual">
+       
+        <div class="card card-outline-info" id="' + Object.item_id + 'Panel"> <div class="card-block"><img class="card-img-top" src="images/default.png" alt="Card image cap"><div class="card-body"><p class="card-text">THIS IS A BUNCH OF TEXT FOR THIS THING</p></div><div class="card-body"><a href="' + Object.item_data.link + '" class="card-link" target="_blank">HERE IS A LINK</a></div></div></div></div><div class="card-footer text-muted">THIS WAS PUBLISHED ON THIS DATE</div></div>
         </div>
-
+        
         <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
