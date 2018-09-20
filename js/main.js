@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 //fetch json from endpoint as im not familiar with apiary/rest api's 
 var fetchJson = function () {
-    const url = 'http://private-cc77e-aff.apiary-mock.com/posts';
+    const url = 'https://private-cc77e-aff.apiary-mock.com/posts';
     fetch(url).then(response => {
         return response.json();
 
@@ -44,7 +44,7 @@ var fetchJson = function () {
 var previous = null;
 var current = null;
 setInterval(function () {
-    $.getJSON('http://private-cc77e-aff.apiary-mock.com/posts', function (json) {
+    $.getJSON('https://private-cc77e-aff.apiary-mock.com/posts', function (json) {
         current = JSON.stringify(json);
         if (previous && current && previous !== current) {
             console.log('refresh');
